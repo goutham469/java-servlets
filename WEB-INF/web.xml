@@ -1,0 +1,60 @@
+<web-app>
+
+    <!-- user registration -->
+    <servlet>
+        <servlet-name>UserRegistration</servlet-name>
+        <servlet-class>UserRegistration</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserRegistration</servlet-name>
+        <url-pattern>/user-register</url-pattern>
+    </servlet-mapping>
+
+    <!-- user login -->
+    <servlet>
+        <servlet-name>UserLogin</servlet-name>
+        <servlet-class>UserLogin</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserLogin</servlet-name>
+        <url-pattern>/user-login</url-pattern>
+    </servlet-mapping>
+
+    <!-- question submit -->
+    <servlet>
+        <servlet-name>SubmitQuestion</servlet-name>
+        <servlet-class>SubmitQuestion</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubmitQuestion</servlet-name>
+        <url-pattern>/submit-question</url-pattern>
+    </servlet-mapping>
+
+    <!-- answer submit -->
+    <servlet>
+        <servlet-name>SubmitAnswer</servlet-name>
+        <servlet-class>SubmitAnswer</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubmitAnswer</servlet-name>
+        <url-pattern>/submit-answer</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- answer submit form -->
+    <servlet>
+        <servlet-name>SubmitAnswerForm</servlet-name>
+        <servlet-class>SubmitAnswerForm</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SubmitAnswerForm</servlet-name>
+        <url-pattern>/submit-answer-form</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
