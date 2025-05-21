@@ -33,7 +33,7 @@ public class UserLogin extends HttpServlet
                 res.addCookie(passCookie);
 
                 // Redirect to home.jsp
-                res.sendRedirect("all-questions.jsp");
+                res.sendRedirect("dashboard.html");
             } else {
                 out.println("<h2>User not found or incorrect password.</h2>");
             }

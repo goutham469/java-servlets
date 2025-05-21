@@ -5,9 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>You Ask i Tell</title>
 </head>
+<style>
+    body{
+        background-image: url("assets/background-image.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+    }
+    .title{
+        font-size: 36px;
+        text-transform: capitalize;
+        font-weight: 900;
+        font-family:'Courier New', Courier, monospace ;
+    }
+    a{
+        font-size: 18px;
+        text-decoration: none;
+        background-color: aliceblue;
+        border-radius: 5px;
+        color: black;
+        cursor: pointer;
+        padding: 3px;
+    }
+</style>
 <body>
-    <a href="./user-login.jsp">user login</a>
-    <br/><br/>
-    <a href="./user-registration.jsp">user registration</a>
+    <h1 style="text-transform: capitalize;">Welcome to Question and Answer platform .</h1>
+    <img
+        src="./assets/q&a.png"
+    />
+    <div style="display: flex;justify-content: space-between;">
+        <div style="display: flex;justify-content: space-between;margin: 10px;">
+            <div>
+                <h3>What You can find Here ?</h3>
+                <ul>
+                    <li>Ask Your Question.</li>
+                    <li>Get Solution for your queries.</li>
+                    <li>Explore diverse community.</li>
+                    <li>Get engaged online.</li>
+                </ul>
+            </div>
+            <div>
+                <a href="./user-login.jsp">user login</a>
+                <br/><br/>
+                <a href="./user-registration.jsp">user registration</a>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
