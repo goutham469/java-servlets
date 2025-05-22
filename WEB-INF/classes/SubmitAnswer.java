@@ -18,6 +18,7 @@ public class SubmitAnswer extends HttpServlet {
         String q_id = req.getParameter("id");
         String question = req.getParameter("question");
         String answer = req.getParameter("answer");
+        String author = req.getParameter("author");
 
         if (q_id == null || question == null || answer == null || answer.trim().isEmpty()) {
             out.println("<h2>All fields are required.</h2>");
@@ -29,16 +30,21 @@ public class SubmitAnswer extends HttpServlet {
             int answerId = new Random().nextInt(100000);
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/quora", "root", "goutham.sql"
-            );
 
-            String sql = "INSERT INTO answers(id, question_id, question, answer) VALUES (?, ?, ?, ?)";
+            ServletContext context = req.getServletContext();
+            String dbURL = context.getInitParameter("dbURL");
+            String dbUser = context.getInitParameter("dbUser");
+            String dbPassword = context.getInitParameter("dbPassword");
+            Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
+
+        
+            String sql = "INSERT INTO answers(id, question_id, question, answer , author) VALUES (?, ?, ?, ? , ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, answerId);
             pstmt.setInt(2, questionId);
             pstmt.setString(3, question);
             pstmt.setString(4, answer);
+            pstmt.setString(5,author);
 
             int rows = pstmt.executeUpdate();
             if (rows > 0) {

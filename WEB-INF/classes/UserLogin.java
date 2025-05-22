@@ -15,7 +15,11 @@ public class UserLogin extends HttpServlet
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/quora", "root", "goutham.sql");
+            ServletContext context = req.getServletContext();
+            String dbURL = context.getInitParameter("dbURL");
+            String dbUser = context.getInitParameter("dbUser");
+            String dbPassword = context.getInitParameter("dbPassword");
+            Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPassword);
 
             String sql = "SELECT * FROM users WHERE name = ? AND password = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -31,9 +35,14 @@ public class UserLogin extends HttpServlet
                 Cookie passCookie = new Cookie("password", password);
                 res.addCookie(userCookie);
                 res.addCookie(passCookie);
+                
+                sql = "UPDATE users SET last_login = current_timestamp() WHERE name=?;";
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setString(1, username);
+                pstmt.executeUpdate();
 
                 // Redirect to home.jsp
-                res.sendRedirect("dashboard.html");
+                res.sendRedirect("dashboard.jsp");
             } else {
                 out.println("<h2>User not found or incorrect password.</h2>");
             }
