@@ -41,9 +41,7 @@ public class UserLogin extends HttpServlet
                 pstmt.setString(1, username);
                 pstmt.executeUpdate();
 
-                // Redirect to home.jsp
-                String contextPath = req.getContextPath();
-                res.sendRedirect(contextPath + "/dashboard.jsp");
+                out.println("<a href='./dashboard.jsp'>Click here to navigate to Dashboard</a>");
             } else {
                 out.println("<h2>User not found or incorrect password.</h2>");
             }
