@@ -33,6 +33,7 @@
     <h1>User Registration</h1>
     <form action="user-register">
         <input type="text" placeholder="username" name="username" /><br/>
+        <input type="text" placeholder="email" name="email" /><br/>
         <input type="text" placeholder="password" name="password" /><br/>
         <input type="submit" />
     </form>

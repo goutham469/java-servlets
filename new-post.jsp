@@ -56,6 +56,7 @@
         <h2>Post a New Question</h2>
         <form action="submit-question">
             <textarea placeholder="Your question goes here..." name="question" required></textarea>
+            
             <br/>
             <button type="submit">Submit Question</button>
         </form>

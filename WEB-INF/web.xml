@@ -56,5 +56,19 @@
         <url-pattern>/submit-answer-form</url-pattern>
     </servlet-mapping>
 
+    <!-- JDBC Context params -->
+    <context-param>
+        <param-name>dbURL</param-name>
+        <param-value>jdbc:mysql://3.108.9.115:3306/quora?useSSL=false&amp;allowPublicKeyRetrieval=true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dbUser</param-name>
+        <param-value>goutham</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dbPassword</param-name>
+        <param-value>Goutham@123</param-value>
+    </context-param>
+
 
 </web-app>

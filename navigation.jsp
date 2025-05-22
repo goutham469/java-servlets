@@ -33,10 +33,20 @@
         a:hover {
             background-color: #495057;
         }
+        body{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
     </style>
 </head>
 <body>
-    <ul>
+    <img
+        src="./assets/logo.png"
+        width="200px"
+        style="margin: 10px;border-radius: 10px;"
+    />
+    <ul style="list-style-type: none;">
         <li><a href="./profile.jsp" target="outlet">Profile</a></li>
         <li><a href="./all-questions.jsp" target="outlet">QUESTIONS</a></li>
         <li><a href="./all-answers.jsp" target="outlet">ANSWERS</a></li>
