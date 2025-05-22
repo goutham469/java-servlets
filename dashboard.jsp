@@ -20,10 +20,10 @@
         }
 
         if( username == "" || password == "" ){
-            response.sendRedirect("./user-login.jsp");
+            response.sendRedirect("../user-login.jsp");
         }
     }else{
-        response.sendRedirect("./user-login.jsp");
+        response.sendRedirect("../user-login.jsp");
     }
 %>
 <frameset rows="15%, 80%">
